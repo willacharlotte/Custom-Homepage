@@ -5,9 +5,35 @@ html {
   color: #c1c9d2;
 }
 
+@keyframes title-first-word {
+  0%    {color: inherit}
+  50%   {color: #61aeed}
+  100%  {color: inherit}
+}
+
+@keyframes title-second-word {
+  0%    {color: inherit}
+  50%   {color: #97c278}
+  100%  {color: inherit}
+}
+
 h1.title {
   text-align: center;
   font-size: 3rem;
+  animation-duration: 2s;
+  margin-top: 15rem;
+}
+
+h1.title span:first-child {
+  animation: title-first-word;
+  animation-duration: inherit;
+  animation-delay: 0.5s;
+}
+
+h1.title span:nth-child(2) {
+  animation: title-second-word;
+  animation-duration: inherit;
+  animation-delay: 1.5s;
 }
 
 a {
