@@ -9,3 +9,41 @@ h1.title {
   text-align: center;
   font-size: 3rem;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: #e3bf7a;
+}
+
+a:active {
+  color: #d09966;
+}
+
+nav {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav div {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+nav div a {
+  margin: 1rem 4rem;
+  padding: 0.5rem;
+}
