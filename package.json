@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/willacharlotte/Custom-Homepage/issues"
   },
-  "homepage": "https://github.com/willacharlotte/Custom-Homepage#readme"
+  "homepage": "https://github.com/willacharlotte/Custom-Homepage#readme",
+  "dependencies": {
+    "jquery": "^3.6.1"
+  }
 }
