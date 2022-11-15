@@ -21,7 +21,7 @@ h1.title {
   text-align: center;
   font-size: 3rem;
   animation-duration: 2s;
-  margin-top: 15rem;
+  margin-top: 5rem;
 }
 
 h1.title span:first-child {
@@ -76,4 +76,12 @@ nav div a {
 
 hr {
   width: 50%
+}
+div#chess-container {
+  display: flex;
+  justify-content: center;
+}
+
+div#chessboard {
+  width: 24rem;
 }
