@@ -1,0 +1,18 @@
+.board-b72b1 {
+  border: 2px solid #282c34;
+  box-sizing: content-box;
+}
+
+.white-1e1d7 {
+  background-color: #abb2bf;
+  color: #1d2026;
+}
+
+.black-3c85d {
+  background-color: #1d2026;
+  color: #abb2bf;
+}
+
+.highlight1-32417, .highlight2-9c5d2 {
+  box-shadow: inset 0 0 3px 3px #c678dd;
+}
