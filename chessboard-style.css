@@ -1,5 +1,14 @@
+div#chess-container {
+  display: flex;
+  justify-content: center;
+}
+
+div#chessboard {
+  width: 32rem;
+}
+
 .board-b72b1 {
-  border: 2px solid #282c34;
+  border: 2px solid #1d2026;
   box-sizing: content-box;
 }
 
