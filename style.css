@@ -41,6 +41,7 @@ h1.title span:nth-child(2) {
 
 a {
   text-decoration: none;
+  transition: 400ms;
 }
 
 a:link {
