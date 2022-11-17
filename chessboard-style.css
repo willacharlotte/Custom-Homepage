@@ -37,7 +37,7 @@ div.board-b72b1.mini-board:hover {
 
 #minimise-board {
   position: absolute;
-  margin-left: 36rem;
+  margin-left: 35rem;
   margin-top: 1rem
 }
 
@@ -58,14 +58,13 @@ div.board-b72b1.mini-board:hover {
   transition: 400ms;
 }
 
-#minimise-cross:hover {
-  color: #c678dd;
-  cursor: pointer;
+#minimise-board b {
+  transition: 400ms;
 }
 
 #minimise-board b:hover {
-  color: inherit;
-  cursor: inherit;
+  color: #c678dd;
+  cursor: pointer;
 }
 
 div.white-1e1d7 {
