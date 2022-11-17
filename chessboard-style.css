@@ -1,27 +1,83 @@
-div#chess-container {
+#header-space.mini-board {
+  height: 10rem;
+}
+
+#header-space.maxi-board {
+  height: 0;
+}
+
+#chess-container {
   display: flex;
   justify-content: center;
 }
 
-div#chessboard {
+#chessboard {
+  width: 12rem;
+  margin-top: 1rem;
+}
+
+#chessboard.mini-board {
+  width: 12rem;
+}
+
+#chessboard.maxi-board {
   width: 32rem;
 }
 
-.board-b72b1 {
-  border: 2px solid #1d2026;
+div.board-b72b1 {
+  border: 2px solid transparent;
   box-sizing: content-box;
+  transition: 400ms;
 }
 
-.white-1e1d7 {
+div.board-b72b1.mini-board:hover {
+  border-color: #c678dd;
+  cursor: pointer;
+}
+
+#minimise-board {
+  position: absolute;
+  margin-left: 36rem;
+  margin-top: 1rem
+}
+
+#minimise-board.mini-board {
+  display: none;
+}
+
+#minimise-board.maxi-board {
+  display: initial;
+}
+
+#minimise-cross {
+  padding: 1rem;
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  font-size: 2rem;
+  transition: 400ms;
+}
+
+#minimise-cross:hover {
+  color: #c678dd;
+  cursor: pointer;
+}
+
+#minimise-board b:hover {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.white-1e1d7 {
   background-color: #abb2bf;
   color: #1d2026;
 }
 
-.black-3c85d {
+div.black-3c85d {
   background-color: #1d2026;
   color: #abb2bf;
 }
 
-.highlight1-32417, .highlight2-9c5d2 {
+div.highlight1-32417, div.highlight2-9c5d2 {
   box-shadow: inset 0 0 3px 3px #c678dd;
 }

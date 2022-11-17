@@ -17,10 +17,6 @@ html {
   100%  {color: inherit}
 }
 
-div#header-space {
-  height: 10rem;
-}
-
 h1.title {
   text-align: center;
   font-size: 3rem;
