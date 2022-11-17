@@ -54,12 +54,13 @@ const initMaxiBoard = (position = 'start', orientation = 'white') => {
 }
 
 let boardObj;
+let puzzle;
 
 const minimiseBoard = () => {
-    boardObj = initMiniBoard();
-
     maxiToMini($('#minimise-board'));
     maxiToMini($('#header-space'));
+
+    boardObj = initMiniBoard(puzzle['fen']);
 
     $('.board-b72b1.mini-board').click(maximiseBoard);
 
@@ -67,14 +68,19 @@ const minimiseBoard = () => {
 }
 
 const maximiseBoard = () => {
-    boardObj = initMaxiBoard();
-
     miniToMaxi($('#minimise-board'));
     miniToMaxi($('#header-space'));
+
+    boardObj = initMaxiBoard(puzzle['fen']);
 
     $('#minimise-cross').click(minimiseBoard);
 
     boardObj.resize();
 }
 
-minimiseBoard();
+async function main() {
+    puzzle = await fetchDailyPuzzle();
+    minimiseBoard();
+}
+
+main();
