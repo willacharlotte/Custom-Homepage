@@ -77,6 +77,10 @@ div.black-3c85d {
   color: #abb2bf;
 }
 
+div.square-55d63 {
+  transition: 200ms;
+}
+
 div.highlight1-32417, div.highlight2-9c5d2 {
   box-shadow: inset 0 0 3px 3px #c678dd;
 }
