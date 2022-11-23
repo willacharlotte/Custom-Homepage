@@ -7,6 +7,23 @@ const defaultPuzzle = {
     "image": null
 }
 
+let boardObj;
+let puzzle;
+
+async function main() {
+    puzzle = await fetchDailyPuzzle();
+
+    const puzzleInfoTemplate = Handlebars.compile($('#puzzle-info').html());
+    const rendered = puzzleInfoTemplate({
+        puzzleUrl: puzzle['url'],
+        puzzleTitle: puzzle['title']
+    });
+
+    $('#rendered-info').html(rendered);
+
+    minimiseBoard();
+}
+
 async function fetchDailyPuzzle() {
     return fetch("https://api.chess.com/pub/puzzle")
         .then(response => {
@@ -53,11 +70,8 @@ const initMaxiBoard = (position = 'start', orientation = 'white') => {
     return board;
 }
 
-let boardObj;
-let puzzle;
-
 const minimiseBoard = () => {
-    maxiToMini($('#minimise-board'));
+    maxiToMini($('.board-sides'));
     maxiToMini($('#header-space'));
 
     boardObj = initMiniBoard(puzzle['fen']);
@@ -68,7 +82,7 @@ const minimiseBoard = () => {
 }
 
 const maximiseBoard = () => {
-    miniToMaxi($('#minimise-board'));
+    miniToMaxi($('.board-sides'));
     miniToMaxi($('#header-space'));
 
     boardObj = initMaxiBoard(puzzle['fen']);
@@ -78,9 +92,4 @@ const maximiseBoard = () => {
     boardObj.resize();
 }
 
-async function main() {
-    puzzle = await fetchDailyPuzzle();
-    minimiseBoard();
-}
-
-main();
+$(document).ready(main);

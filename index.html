@@ -7,9 +7,9 @@
   <meta content="ie=edge" http-equiv="X-UA-Compatible">
   <title>Home</title>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link href="img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
 
   <link href="css/normalise.css" rel="stylesheet" type="text/css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -28,6 +28,10 @@
           integrity="sha512-WfASs5HtTgTL/eZsLaOftSN9wMQl7WZGlU5UiKx/yxTViMfGh9whWRwKAC27qH8VtZJqSMqDdbq2uUb1tY3jvQ=="
           referrerpolicy="no-referrer"
           src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+  <script crossorigin="anonymous" defer
+          integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+          referrerpolicy="no-referrer"
+          src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 
   <script defer src="js/main.js" type="text/javascript"></script>
 </head>
@@ -51,11 +55,18 @@
 </nav>
 <main>
   <div id="chess-container">
+    <div class="board-sides">
+      <!--I do absolutely nothing but making positioning easier-->
+    </div>
     <div id="chessboard"></div>
-    <div id="minimise-board">
-      <button id="minimise-cross" type="button" name="minimise">
+    <div class="board-sides" id="board-controls">
+      <button id="minimise-cross" name="minimise" type="button">
         <label for="minimise-cross"><b>X</b></label>
       </button>
+      <script id="puzzle-info" type="text/x-handlebars-template">
+        <h2><a href="{{puzzleUrl}}">{{puzzleTitle}}</a></h2>
+      </script>
+      <div id="rendered-info"></div>
     </div>
   </div>
 </main>

@@ -9,11 +9,11 @@
 #chess-container {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 #chessboard {
   width: 12rem;
-  margin-top: 1rem;
 }
 
 #chessboard.mini-board {
@@ -35,22 +35,20 @@ div.board-b72b1.mini-board:hover {
   cursor: pointer;
 }
 
-#minimise-board {
-  position: absolute;
-  margin-left: 35rem;
-  margin-top: 1rem
+.board-sides {
+  width: 20rem;
 }
 
-#minimise-board.mini-board {
+.board-sides.mini-board {
   display: none;
 }
 
-#minimise-board.maxi-board {
+.board-sides.maxi-board {
   display: initial;
 }
 
 #minimise-cross {
-  padding: 1rem;
+  padding: 0;
   border: none;
   color: inherit;
   background-color: inherit;
@@ -58,11 +56,15 @@ div.board-b72b1.mini-board:hover {
   transition: 400ms;
 }
 
-#minimise-board b {
+#board-controls {
+  padding: 1rem;
+}
+
+#board-controls b {
   transition: 400ms;
 }
 
-#minimise-board b:hover {
+#board-controls b:hover, #board-controls a:hover {
   color: #c678dd;
   cursor: pointer;
 }
