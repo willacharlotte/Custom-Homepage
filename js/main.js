@@ -72,7 +72,7 @@ const minimiseBoard = () => {
         miniToMaxi($('#header-space'));
 
         overlay.click(maximiseBoard);
-    }, 500)
+    }, 400)
 }
 
 const maximiseBoard = () => {
@@ -84,9 +84,10 @@ const maximiseBoard = () => {
 
     $('#minimise-cross').click(minimiseBoard);
 
-    setTimeout(() => boardObj.position(puzzle['fen'], true), 500);
+    $('#reset-board').click(() => boardObj.position(puzzle['fen'], true));
+    $('#clear-board').click(() => boardObj.position('start', true));
 
-    // boardObj.position(puzzle['fen'], true);
+    setTimeout(() => boardObj.position(puzzle['fen'], true), 400);
 }
 
 $(document).ready(main);

@@ -40,6 +40,7 @@ div.board-b72b1 {
 }
 
 #chess-overlay.mini:hover {
+  box-shadow: rgba(171, 178, 191, 0.25) 0 0 2rem;
   border-color: #c678dd;
   cursor: pointer;
 }
@@ -61,26 +62,49 @@ div.board-b72b1 {
   display: initial;
 }
 
-#minimise-cross {
+#board-controls {
+  box-sizing: border-box;
+  height: 100%;
+  padding: .5rem 1rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 12.5% 75% 12.5%;
+}
+
+#board-controls div:last-child {
+  height: max-content;
+  align-self: end;
+}
+
+#board-controls button {
   padding: 0;
   border: none;
   color: inherit;
   background-color: inherit;
-  font-size: 2rem;
+  width: min-content;
+}
+
+#board-controls button label {
   transition: 400ms;
 }
 
-#board-controls {
-  padding: 1rem;
-}
-
-#board-controls b {
-  transition: 400ms;
-}
-
-#board-controls b:hover, #board-controls a:hover {
+#board-controls button label:hover, #board-controls a:hover {
   color: #c678dd;
+  text-shadow: rgba(171, 178, 191, 0.50) 0 0 2rem;
   cursor: pointer;
+}
+
+#board-controls h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+#minimise-cross {
+  font-size: 2rem;
+}
+
+#reset-clear-buttons {
+  font-size: 1.5rem;
 }
 
 div.white-1e1d7 {

@@ -60,14 +60,27 @@
     </div>
     <img alt="Chess starting position" class="mini" id="chess-overlay" src="img/start_position.png">
     <div class="mini" id="chessboard"></div>
-    <div class="mini board-sides" id="board-controls">
-      <button id="minimise-cross" name="minimise" type="button">
-        <label for="minimise-cross"><b>X</b></label>
-      </button>
-      <script id="puzzle-info" type="text/x-handlebars-template">
-        <h2><a href="{{puzzleUrl}}">{{puzzleTitle}}</a></h2>
-      </script>
-      <div id="rendered-info"></div>
+    <div class="mini board-sides">
+      <div id="board-controls">
+        <div>
+          <button id="minimise-cross" name="minimise" type="button">
+            <label for="minimise-cross"><b>X</b></label>
+          </button>
+        </div>
+        <script id="puzzle-info" type="text/x-handlebars-template">
+          <a href="{{puzzleUrl}}"><h2>{{puzzleTitle}}</h2></a>
+        </script>
+        <div id="rendered-info"></div>
+        <div id="reset-clear-buttons">
+          <button id="reset-board" name="reset" type="button">
+            <label for="reset-board">reset</label>
+          </button>
+          <span>&nbsp;|&nbsp;</span>
+          <button id="clear-board" name="clear" type="button">
+            <label for="clear-board">clear</label>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </main>
