@@ -20,7 +20,7 @@ async function main() {
     });
 
     $('#rendered-info').html(rendered);
-    boardObj = initBoard(true, puzzle['fen']);
+    boardObj = initBoard(true, 'start');
     $('#chess-overlay').click(maximiseBoard);
 }
 
@@ -61,14 +61,18 @@ const maxiToMini = (...elements) => {
 }
 
 const minimiseBoard = () => {
-    const overlay = $('#chess-overlay');
-    maxiToMini(
-        overlay,  $('.board-sides'),
-        $('#chessboard'), $('.board-b72b1')
-    );
-    miniToMaxi($('#header-space'));
+    boardObj.position('start', true);
 
-    overlay.click(maximiseBoard);
+    setTimeout(() => {
+        const overlay = $('#chess-overlay');
+        maxiToMini(
+            overlay,  $('.board-sides'),
+            $('#chessboard'), $('.board-b72b1')
+        );
+        miniToMaxi($('#header-space'));
+
+        overlay.click(maximiseBoard);
+    }, 500)
 }
 
 const maximiseBoard = () => {
@@ -79,6 +83,10 @@ const maximiseBoard = () => {
     maxiToMini($('#header-space'));
 
     $('#minimise-cross').click(minimiseBoard);
+
+    setTimeout(() => boardObj.position(puzzle['fen'], true), 500);
+
+    // boardObj.position(puzzle['fen'], true);
 }
 
 $(document).ready(main);
