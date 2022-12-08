@@ -20,8 +20,8 @@ async function main() {
     });
 
     $('#rendered-info').html(rendered);
-
-    minimiseBoard();
+    boardObj = initBoard(true, puzzle['fen']);
+    $('#chess-overlay').click(maximiseBoard);
 }
 
 async function fetchDailyPuzzle() {
@@ -46,50 +46,39 @@ const initBoard = (draggable, position = 'start', orientation = 'white') => {
     return Chessboard('chessboard', config);
 };
 
-const miniToMaxi = (element) => {
-    element.removeClass('mini-board');
-    element.addClass('maxi-board');
+const miniToMaxi = (...elements) => {
+    for (let element of elements) {
+        element.removeClass('mini');
+        element.addClass('maxi');
+    }
 }
 
-const maxiToMini = (element) => {
-    element.removeClass('maxi-board');
-    element.addClass('mini-board');
-}
-
-const initMiniBoard = (position = 'start', orientation = 'white') => {
-    const board = initBoard(false, position, orientation);
-    maxiToMini($('#chessboard'));
-    maxiToMini($('.board-b72b1'));
-    return board;
-}
-
-const initMaxiBoard = (position = 'start', orientation = 'white') => {
-    const board = initBoard(true, position, orientation);
-    miniToMaxi($('#chessboard'));
-    miniToMaxi($('.board-b72b1'));
-    return board;
+const maxiToMini = (...elements) => {
+    for (let element of elements) {
+        element.removeClass('maxi');
+        element.addClass('mini');
+    }
 }
 
 const minimiseBoard = () => {
-    maxiToMini($('.board-sides'));
-    maxiToMini($('#header-space'));
+    const overlay = $('#chess-overlay');
+    maxiToMini(
+        overlay,  $('.board-sides'),
+        $('#chessboard'), $('.board-b72b1')
+    );
+    miniToMaxi($('#header-space'));
 
-    boardObj = initMiniBoard(puzzle['fen']);
-
-    $('.board-b72b1.mini-board').click(maximiseBoard);
-
-    boardObj.resize();
+    overlay.click(maximiseBoard);
 }
 
 const maximiseBoard = () => {
-    miniToMaxi($('.board-sides'));
-    miniToMaxi($('#header-space'));
-
-    boardObj = initMaxiBoard(puzzle['fen']);
+    miniToMaxi(
+        $('#chess-overlay'), $('.board-sides'),
+        $('#chessboard'), $('.board-b72b1')
+    )
+    maxiToMini($('#header-space'));
 
     $('#minimise-cross').click(minimiseBoard);
-
-    boardObj.resize();
 }
 
 $(document).ready(main);
